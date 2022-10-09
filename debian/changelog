@@ -1,0 +1,185 @@
+keyrings.alt (4.1.0-1) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Python Team <team+python@tracker.debian.org>  Thu, 19 May 2022 10:14:20 +0800
+
+keyrings.alt (4.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 16 Aug 2021 12:11:09 +0300
+
+keyrings.alt (4.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Adapt debian/tests/pytest for the new release.
+    - Tests are not shipped in python3-keyrings.alt anymore.
+  * Bump Standards-Version to 4.5.1, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 22 Dec 2020 20:38:59 +0300
+
+keyrings.alt (4.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 08 Nov 2020 21:14:44 +0300
+
+keyrings.alt (4.0.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Drop no_pytest_flake8_black.diff, no longer needed.
+  * Drop keyring_testing.diff, included in the new release.
+  * Build-depend on python3-toml.
+  * Bump python3-setuptools-scm required version to 3.4.1.
+  * Switch from python3-crypto to python3-pycryptodome (closes: #971312).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 07 Oct 2020 14:38:14 +0300
+
+keyrings.alt (3.4.0-2) unstable; urgency=medium
+
+  * Backport upstream patch to rely on keyring 20 for testing package.
+  * Add an autopkgtest.
+  * Make python3-keyrings.alt depend on python3-keyring.
+  * Set Rules-Requires-Root: no.
+  * Update to debhelper compat level 13.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 22 Jul 2020 12:47:27 +0300
+
+keyrings.alt (3.4.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop dependencies on python3-mock and python3-six, no longer needed.
+  * Bump Standards-Version to 4.5.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 23 Mar 2020 12:19:29 +0300
+
+keyrings.alt (3.2.0-2) unstable; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Stop suggesting gir1.2-gnomekeyring-1.0, it was removed from unstable
+    (closes: #867953, #867954).
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set field Upstream-Name in debian/copyright.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Sandro Tosi ]
+  * Drop python2 support; Closes: #936789
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 16 Mar 2020 11:05:32 -0400
+
+keyrings.alt (3.2.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.1.
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Stop suggesting python-keyczar, it was removed from unstable
+    (closes: #921568).
+  * Stop suggesting python-gdata, it was removed from unstable.
+  * Drop --black from pytest addopts, in addition to --flake8.
+  * Stop running tests with Python 2.
+  * Build-depend on python3-pytest-cov.
+  * Make sure the .coverage file is not installed.
+  * Bump copyright years.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 06 Dec 2019 20:52:35 +0300
+
+keyrings.alt (3.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - pyfs backend is disabled with pyfs 2 (closes: #917496).
+  * Refresh debian/patches/no_pytest_flake8.diff.
+  * Drop python-fs build-dependency and suggestion.
+  * Bump Standards-Version to 4.3.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 28 Dec 2018 09:45:05 +0300
+
+keyrings.alt (3.1-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Remove pytest-flake8 dependency, it is not packaged yet.
+  * Bump Standards-Version to 4.2.1, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sun, 09 Sep 2018 19:08:54 +0300
+
+keyrings.alt (3.0-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Do not ship keyrings/__init__.py files.
+    - For Python 3, the namespace can be implicit (per PEP 420).
+    - For Python 2, let dh_python2 generate this file in postinst.
+  * Add a warning from upstream README to the package descriptions.
+  * Update to debhelper compatibility level 11.
+  * Bump Standards-Version to 4.1.3, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 22 Feb 2018 13:38:44 +0300
+
+keyrings.alt (2.2-2) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.0.0, no changes needed.
+  * Upload to unstable.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 27 Jun 2017 14:07:37 +0300
+
+keyrings.alt (2.2-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Fixes compatibility with python-keyring 10.3.1.
+  * Add dependency on python[3]-six, following upstream.
+  * Drop dependency on python[3]-kde4, the KWallet 4 backend is now part
+    of main python-keyring package.
+  * Add tests/test_file.py and tests/test_Windows.py to pytest ignore list
+    for Python 2, to avoid dependency on backports.unittest_mock.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 27 Mar 2017 20:44:21 +0300
+
+keyrings.alt (1.3-1) unstable; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Add build-dependency on python-fs, for the testsuite.
+  * Change license name in debian/copyright from MIT to Expat.
+  * New upstream release.
+  * Bump setuptools-scm dependency to ≥ 1.15.0, as required by setup.py.
+  * Tell pytest to exclude some files that cannot be imported.
+  * Bump Standards-Version to 3.9.8, no changes needed.
+
+  [ Ondřej Nový ]
+  * Depend on newer dh-python which sets SETUPTOOLS_SCM_PRETEND_VERSION
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 14 Dec 2016 14:14:52 +0300
+
+keyrings.alt (1.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fixes tests failures (closes: #816306).
+  * Bump Standards-Version to 3.9.7, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 02 Mar 2016 09:39:27 +0300
+
+keyrings.alt (1.1-1) unstable; urgency=medium
+
+  * Initial release (closes: #813291).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 06 Feb 2016 12:28:38 +0300

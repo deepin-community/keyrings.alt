@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+#DH_VERBOSE=1
+
+export PYBUILD_NAME=keyrings.alt
+export PYBUILD_TEST_ARGS=--ignore=keyrings/alt/_win_crypto.py
+
+%:
+	dh $@ --with python3 --buildsystem pybuild
+
+override_dh_installchangelogs:
+	dh_installchangelogs -k CHANGES.rst

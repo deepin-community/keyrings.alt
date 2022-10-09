@@ -1,0 +1,2 @@
+Tests: pytest
+Depends: python3-all, python3-keyrings.alt, python3-pytest
